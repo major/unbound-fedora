@@ -45,5 +45,7 @@ jobs:
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,mode=max,dest=/tmp/.buildx-cache
-          tags: ${{ steps.meta.outputs.tags }}
+          tags:
+            - ${{ steps.meta.outputs.tags }}
+            - latest
           labels: ${{ steps.meta.outputs.labels }}
